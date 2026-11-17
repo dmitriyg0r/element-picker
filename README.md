@@ -2,59 +2,79 @@
   <img src="icons/128.png" width="72" height="72" alt="">
 </p>
 
-<h1 align="center">Выбор элемента</h1>
+<h1 align="center">Element Picker</h1>
 
-<p align="center">Заметки прямо на веб-странице. Отметьте, что поправить, и скопируйте всё одним нажатием.</p>
+<p align="center">Turn feedback on a live web page into actionable notes for your AI coding assistant.</p>
 
-<p align="center"><strong>Chrome · Manifest V3 · v1.3.5</strong></p>
+<p align="center"><strong>Chrome · Manifest V3</strong></p>
 
 <p align="center">
-  <a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Скачать расширение</a>
-  · <a href="#установка">Установка</a>
-  · <a href="#управление">Управление</a>
+  <strong>English</strong> · <a href="README.ru.md">Русский</a>
+  <br>
+  <a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Download for Chrome</a>
+  · <a href="#install">Install</a>
+  · <a href="#keyboard-shortcuts">Keyboard shortcuts</a>
 </p>
 
-![Заметка рядом с кнопкой и сохранённая номерная метка на демонстрационной странице](docs/annotation.jpg)
+![An inline note next to a button and a numbered marker for a saved note](docs/annotation.jpg)
 
-## Как это работает
+## Why use it with an AI coding assistant?
 
-1. Включите режим выбора из меню расширения или горячей клавишей.
-2. Кликните по элементу или выделите прямоугольную область мышью. Рядом откроется компактное поле заметки.
-3. Напишите замечание и нажмите **Enter**. На странице останется номерная метка. По ней можно снова открыть заметку.
-4. Нажмите **Копировать** на панели внизу страницы. В буфер попадут сохранённые замечания вместе с путём страницы и селекторами элементов или координатами областей.
+When you spot a UI issue, show the assistant exactly where it is and what you want changed. Instead of describing where to find a button or a card, select it on the page and write the requested change next to it. Copy all your notes and paste them into Codex or another AI coding assistant. Each note includes the page path and a CSS selector or the coordinates of the selected area.
 
-Счётчик **Заметки** открывает список и позволяет удалять отметки. При сбое копирования расширение выделит текст для ручного копирования. Заметки живут в открытом документе и сбрасываются при его перезагрузке или закрытии.
+For example, click a button and write “Rename this button to **View request**.” Here is what the extension copies:
 
-## Установка
+```text
+Страница: /requests
 
-1. Скачайте и распакуйте архив `element-picker-v1.3.5.zip` из [релиза](https://github.com/dmitriyg0r/element-picker/releases/latest). При работе с исходниками можно использовать корень репозитория.
-2. Откройте `chrome://extensions` и включите **Режим разработчика**.
-3. Нажмите **Загрузить распакованное расширение** и выберите папку с файлом `manifest.json`.
-4. Обновите рабочую вкладку и нажмите **Выбрать на странице** в меню расширения.
+1. Open
+   Что исправить: Rename this button to “View request”.
+   Блок: Request details
+   Селектор: #open-request
+   Тег: button
+```
 
-После обновления исходников перезагрузите расширение на странице `chrome://extensions` и обновите рабочую вкладку.
+The current extension UI and export labels are in Russian. You can write notes in any language.
 
-## Управление
+## How it works
 
-| Действие | Клавиши |
+1. Open the extension menu and click **Выбрать на странице** (Start picking), or use a shortcut.
+2. Click an element or drag to select an area. A small note field opens next to the selection.
+3. Write your note and press **Enter**. Click its numbered marker to edit it again.
+4. Click **Копировать** (Copy) in the bottom toolbar and paste the notes into your assistant.
+
+The **Заметки** (Notes) counter opens the list, where you can review or delete notes. If clipboard access fails, the extension selects the text for manual copying. Notes stay in the current page until you reload or close it.
+
+## Install
+
+1. Download the ZIP from the [latest release](https://github.com/dmitriyg0r/element-picker/releases/latest) and extract it. If you cloned the repository, use its root folder.
+2. Open `chrome://extensions` and turn on **Developer mode**.
+3. Click **Load unpacked** and choose the folder containing `manifest.json`.
+4. Reload the page you want to annotate, then open the extension from the Chrome toolbar.
+
+After updating the files, reload the extension at `chrome://extensions` and refresh the page you want to annotate.
+
+## Keyboard shortcuts
+
+| Action | Keys |
 | --- | --- |
-| Включить или завершить выбор | `Alt + Shift + I` по умолчанию |
-| Включить или завершить выбор на Mac | Два быстрых нажатия одной `⌘` или одновременное нажатие левой и правой `⌘` |
-| Сохранить заметку | `Enter` |
-| Добавить строку | `Shift + Enter` |
-| Отменить правку или завершить выбор | `Esc` |
+| Start or stop picking | `Alt + Shift + I` by default |
+| Start or stop picking on a Mac | Quickly tap one `⌘` key twice, or press both `⌘` keys together |
+| Save a note | `Enter` |
+| Add a new line | `Shift + Enter` |
+| Cancel editing or stop picking | `Esc` |
 
-Основное сочетание и жест с `⌘` настраиваются отдельно в меню расширения. Сочетание привязано к физической клавише. Системные сочетания могут перехватываться до передачи Chrome.
+You can configure the main shortcut and the Mac gesture independently in the extension menu. Shortcuts follow the physical key. Chrome and the operating system may intercept some combinations.
 
-## Данные и доступ
+## Data and permissions
 
-Расширение работает локально на страницах HTTP/HTTPS. Сетевых запросов для сбора и копирования заметок нет. Настройки хранятся в локальном хранилище Chrome. При сборе описания расширение не читает значения полей ввода. В копируемом тексте может быть видимый текст выбранного элемента и его контекста, например название карточки.
+The extension runs locally on HTTP and HTTPS pages. Collecting and copying notes requires no network requests. Settings are stored locally in Chrome. The extension skips input field values. Copied notes can include visible text from the selected element and its surrounding block. You choose where to paste them.
 
-## Разработка
+## Development
 
-Расширение написано на JavaScript без сборки и сторонних зависимостей. `content.js` управляет выделением и заметками, `capture.js` собирает текст, `picker-styles.js` оформляет панель, а `shortcuts.js` обрабатывает горячие клавиши.
+The extension uses plain JavaScript with no build step or third-party dependencies. `content.js` manages selection and notes, `capture.js` composes the copied text, `picker-styles.js` defines the on-page interface, and `shortcuts.js` handles keyboard input.
 
-Проверки запускаются через Node.js:
+Run the tests with Node.js:
 
 ```bash
 node --test tests/*.test.cjs

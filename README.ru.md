@@ -8,6 +8,7 @@
   <strong><a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Скачать для Chrome</a></strong>
   · <a href="#демонстрация">Демонстрация</a>
   · <a href="#установка">Установка</a>
+  · <a href="https://www.donationalerts.com/r/dmitriygor">Поддержать на DonationAlerts</a>
   <br>
   <a href="README.md">English</a> · <strong>Русский</strong>
 </p>

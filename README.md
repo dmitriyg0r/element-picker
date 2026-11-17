@@ -1,22 +1,16 @@
 <p align="center">
-  <img src="icons/128.png" width="72" height="72" alt="">
+  <img src="docs/cover.jpg" width="960" alt="Element Picker. Point to the UI. Tell AI what to fix. A note is open next to a selected button.">
 </p>
 
-<h1 align="center">Element Picker</h1>
-
-<p align="center">Turn feedback on a live web page into actionable notes for your AI coding assistant.</p>
-
-<p align="center"><strong>Chrome · Manifest V3</strong></p>
+<p align="center"><strong>Chrome extension · Manifest V3</strong></p>
 
 <p align="center">
-  <strong>English</strong> · <a href="README.ru.md">Русский</a>
-  <br>
-  <a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Download ZIP</a>
+  <strong><a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Download for Chrome</a></strong>
+  · <a href="#watch-the-demo">Watch the demo</a>
   · <a href="#install">Install</a>
-  · <a href="#keyboard-shortcuts">Keyboard shortcuts</a>
+  <br>
+  <strong>English</strong> · <a href="README.ru.md">Русский</a>
 </p>
-
-![Element Picker demo showing an element selected, a note saved with Enter, and the notes copied from the toolbar](docs/demo.gif)
 
 ## Why use it with an AI coding assistant?
 
@@ -35,6 +29,10 @@ For example, click a button and write “Rename this button to **View request**.
 ```
 
 The current extension UI and export labels are in Russian. You can write notes in any language.
+
+## Watch the demo
+
+![Element Picker demo showing an element selected, a note saved with Enter, and the notes copied from the toolbar](docs/demo.gif)
 
 ## How it works
 

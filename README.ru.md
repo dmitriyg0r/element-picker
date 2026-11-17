@@ -1,22 +1,16 @@
 <p align="center">
-  <img src="icons/128.png" width="72" height="72" alt="">
+  <img src="docs/cover.jpg" width="960" alt="Выбор элемента. Компактная заметка рядом с выбранной кнопкой на веб-странице.">
 </p>
 
-<h1 align="center">Выбор элемента</h1>
-
-<p align="center">Превращайте замечания к интерфейсу на открытой странице в конкретные задачи для ИИ-ассистента.</p>
-
-<p align="center"><strong>Chrome · Manifest V3</strong></p>
+<p align="center"><strong>Расширение Chrome · Manifest V3</strong></p>
 
 <p align="center">
-  <a href="README.md">English</a> · <strong>Русский</strong>
-  <br>
-  <a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Скачать ZIP</a>
+  <strong><a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Скачать для Chrome</a></strong>
+  · <a href="#демонстрация">Демонстрация</a>
   · <a href="#установка">Установка</a>
-  · <a href="#горячие-клавиши">Горячие клавиши</a>
+  <br>
+  <a href="README.md">English</a> · <strong>Русский</strong>
 </p>
-
-![Демо: выбор элемента, сохранение заметки по Enter и копирование с нижней панели](docs/demo.gif)
 
 ## Зачем это разработчикам, которые используют ИИ
 
@@ -35,6 +29,10 @@
 ```
 
 Интерфейс и подписи в скопированном тексте сейчас на русском. Заметки можно писать на любом языке.
+
+## Демонстрация
+
+![Демо: выбор элемента, сохранение заметки по Enter и копирование с нижней панели](docs/demo.gif)
 
 ## Как это работает
 

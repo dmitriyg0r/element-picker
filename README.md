@@ -11,12 +11,12 @@
 <p align="center">
   <strong>English</strong> · <a href="README.ru.md">Русский</a>
   <br>
-  <a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Download for Chrome</a>
+  <a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Download ZIP</a>
   · <a href="#install">Install</a>
   · <a href="#keyboard-shortcuts">Keyboard shortcuts</a>
 </p>
 
-![An inline note next to a button and a numbered marker for a saved note](docs/annotation.jpg)
+![Element Picker demo showing an element selected, a note saved with Enter, and the notes copied from the toolbar](docs/demo.gif)
 
 ## Why use it with an AI coding assistant?
 
@@ -68,7 +68,7 @@ You can configure the main shortcut and the Mac gesture independently in the ext
 
 ## Data and permissions
 
-The extension runs locally on HTTP and HTTPS pages. Collecting and copying notes requires no network requests. Settings are stored locally in Chrome. The extension skips input field values. Copied notes can include visible text from the selected element and its surrounding block. You choose where to paste them.
+The extension runs locally on HTTP and HTTPS pages. Collecting and copying notes requires no network requests. Settings are stored locally in Chrome. The extension skips input field values. Copied notes can include visible text from the selected element and its surrounding block. You choose where to paste them. See the [privacy policy](PRIVACY.md).
 
 ## Development
 

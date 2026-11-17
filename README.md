@@ -1,23 +1,33 @@
 <p align="center">
-  <img src="docs/cover.jpg" width="960" alt="Element Picker. Point to the UI. Tell AI what to fix. A note is open next to a selected button.">
+  <img src="docs/readme-banner.jpg" width="900" alt="Element Picker for Chrome, with a note open next to a selected button">
 </p>
 
-<p align="center"><strong>Chrome extension · Manifest V3</strong></p>
+<p align="center"><strong>Annotate web pages in Chrome and send precise UI feedback to your AI coding assistant.</strong></p>
 
 <p align="center">
   <strong><a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Download for Chrome</a></strong>
-  · <a href="#watch-the-demo">Watch the demo</a>
-  · <a href="#install">Install</a>
-  · <a href="https://www.donationalerts.com/r/dmitriygor">Support on DonationAlerts</a>
+  · <a href="#watch-the-demo">Demo</a> · <a href="#install">Installation</a>
   <br>
   <strong>English</strong> · <a href="README.ru.md">Русский</a>
 </p>
 
-## Why use it with an AI coding assistant?
+## Watch the demo
 
-When you spot a UI issue, show the assistant exactly where it is and what you want changed. Instead of describing where to find a button or a card, select it on the page and write the requested change next to it. Copy all your notes and paste them into Codex or another AI coding assistant. Each note includes the page path and a CSS selector or the coordinates of the selected area.
+![Element Picker demo showing an element selected, a note saved with Enter, and the notes copied from the toolbar](docs/demo.gif)
 
-For example, click a button and write “Rename this button to **View request**.” Here is what the extension copies:
+## Quick start
+
+1. Open the extension menu and click **Выбрать на странице** (Start picking), or use a shortcut.
+2. Click an element or drag to select an area. A small note field opens next to the selection.
+3. Write your note and press **Enter**. Click its numbered marker to edit it again.
+4. Click **Копировать** (Copy) in the bottom toolbar and paste the notes into your assistant.
+
+The **Заметки** (Notes) counter opens the list, where you can review or delete notes. If clipboard access fails, the extension selects the text for manual copying. Notes stay in the current page until you reload or close it.
+
+The copied notes include the page path and a CSS selector or the coordinates of the selected area. You can paste them into Codex or any other AI coding assistant.
+
+<details>
+<summary>See an example of the copied text</summary>
 
 ```text
 Страница: /requests
@@ -29,20 +39,9 @@ For example, click a button and write “Rename this button to **View request**.
    Тег: button
 ```
 
-The current extension UI and export labels are in Russian. You can write notes in any language.
+</details>
 
-## Watch the demo
-
-![Element Picker demo showing an element selected, a note saved with Enter, and the notes copied from the toolbar](docs/demo.gif)
-
-## How it works
-
-1. Open the extension menu and click **Выбрать на странице** (Start picking), or use a shortcut.
-2. Click an element or drag to select an area. A small note field opens next to the selection.
-3. Write your note and press **Enter**. Click its numbered marker to edit it again.
-4. Click **Копировать** (Copy) in the bottom toolbar and paste the notes into your assistant.
-
-The **Заметки** (Notes) counter opens the list, where you can review or delete notes. If clipboard access fails, the extension selects the text for manual copying. Notes stay in the current page until you reload or close it.
+The extension interface and copied field labels are in Russian. Notes can be written in any language.
 
 ## Install
 
@@ -78,3 +77,7 @@ Run the tests with Node.js:
 ```bash
 node --test tests/*.test.cjs
 ```
+
+## Feedback and support
+
+[Report a bug or suggest an improvement](https://github.com/dmitriyg0r/element-picker/issues) · [Support development on DonationAlerts](https://www.donationalerts.com/r/dmitriygor)

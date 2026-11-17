@@ -12,6 +12,10 @@ Notes and their page context stay in memory in the current document. They are cl
 
 When you choose **Copy**, the extension writes the notes to your clipboard. You control which app or service receives that text if you paste it. Element Picker has no analytics and does not send notes, website content, or settings to a developer server or third party.
 
+## Chrome Web Store Limited Use
+
+Element Picker uses user data only to create and copy the annotations you request. Its use of user data follows the [Chrome Web Store User Data Policy](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq), including the [Limited Use requirements](https://developer.chrome.com/docs/webstore/program-policies/limited-use).
+
 ## Contact
 
 For privacy questions, contact the developer through the [project's GitHub repository](https://github.com/dmitriyg0r/element-picker). Please avoid including private page contents in public issues.

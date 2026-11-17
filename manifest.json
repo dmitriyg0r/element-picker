@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Выбор элемента",
-  "version": "1.3.5",
-  "description": "Отмечайте элементы страницы, добавляйте заметки и копируйте их. Работает локально.",
+  "name": "Element Picker",
+  "version": "1.3.6",
+  "description": "Annotate web pages and copy UI feedback with CSS selectors or area coordinates. Works locally.",
   "permissions": [
     "storage"
   ],
@@ -11,7 +11,7 @@
     "open_in_tab": false
   },
   "action": {
-    "default_title": "Выбор элемента",
+    "default_title": "Element Picker",
     "default_popup": "options.html",
     "default_icon": {
       "16": "icons/16.png",

@@ -6,6 +6,7 @@
 
 <p align="center">
   <strong><a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Download for Chrome</a></strong>
+  · <a href="https://dmitriyg0r.github.io/element-picker/demo/">Try online</a>
   · <a href="#watch-the-demo">Demo</a> · <a href="#install">Installation</a>
   <br>
   <strong>English</strong> · <a href="README.ru.md">Русский</a>
@@ -17,12 +18,12 @@
 
 ## Quick start
 
-1. Open the extension menu and click **Выбрать на странице** (Start picking), or use a shortcut.
+1. Open the extension menu and click **Start picking**, or use a shortcut.
 2. Click an element or drag to select an area. A small note field opens next to the selection.
 3. Write your note and press **Enter**. Click its numbered marker to edit it again.
-4. Click **Копировать** (Copy) in the bottom toolbar and paste the notes into your assistant.
+4. Click **Copy** in the bottom toolbar and paste the notes into your assistant.
 
-The **Заметки** (Notes) counter opens the list, where you can review or delete notes. If clipboard access fails, the extension selects the text for manual copying. Notes stay in the current page until you reload or close it.
+The **Notes** counter opens the list, where you can review or delete notes. If clipboard access fails, the extension selects the text for manual copying. Notes stay in the current page until you reload or close it.
 
 The copied notes include the page path and a CSS selector or the coordinates of the selected area. You can paste them into Codex or any other AI coding assistant.
 
@@ -30,18 +31,18 @@ The copied notes include the page path and a CSS selector or the coordinates of 
 <summary>See an example of the copied text</summary>
 
 ```text
-Страница: /requests
+Page: /requests
 
 1. Open
-   Что исправить: Rename this button to “View request”.
-   Блок: Request details
-   Селектор: #open-request
-   Тег: button
+   What to change: Rename this button to “View request”.
+   Section: Request details
+   Selector: #open-request
+   Tag: button
 ```
 
 </details>
 
-The extension interface and copied field labels are in Russian. Notes can be written in any language.
+The extension uses English or Russian based on your Chrome language. You can write notes in any language.
 
 ## Install
 

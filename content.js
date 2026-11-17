@@ -1,6 +1,7 @@
 (function () {
   'use strict';
 
+  const t = PickerI18n.message;
   const items = [];
   const selectionEvents = ['mousedown', 'mouseup', 'dblclick', 'contextmenu'];
   let ui, panelMode, editorItem, drag, suppressClick, hovered, frame, observer, resizeObserver, noticeTimer;
@@ -35,6 +36,7 @@
     }
 
     const layer = element('div', 'layer');
+    layer.lang = t('ui_language');
     const marks = element('div');
     const outline = element('div', 'outline hover');
     const tooltip = element('div', 'hover-label');
@@ -43,9 +45,9 @@
 
     const tray = element('div', 'tray');
     const dock = element('div', 'dock');
-    const status = element('span', 'mode', 'Активно');
+    const status = element('span', 'mode', t('selection_active'));
     status.setAttribute('role', 'status');
-    status.title = 'Нажмите Esc, чтобы завершить выбор';
+    status.title = t('exit_selection');
     const notes = element('a', 'notes-link');
     notes.addEventListener('click', event => {
       event.preventDefault();
@@ -53,7 +55,7 @@
       if (panelMode === 'notes') closePanel();
       else showNotes();
     });
-    const copy = button('Копировать', copyNotes, 'primary');
+    const copy = button(t('copy'), copyNotes, 'primary');
     dock.append(status, notes, copy);
 
     const panel = element('section', 'panel');
@@ -69,14 +71,14 @@
 
   function notify(message, temporary = true) {
     clearTimeout(noticeTimer);
-    ui.status.textContent = message || 'Активно';
+    ui.status.textContent = message || t('selection_active');
     if (temporary && message) noticeTimer = setTimeout(() => notify(''), 2600);
   }
 
   function syncButtons() {
     const count = items.length;
     ui.copy.disabled = !count || ui.copying;
-    ui.notes.textContent = 'Заметки · ' + count;
+    ui.notes.textContent = t('notes_count', count);
     if (count) {
       ui.notes.setAttribute('href', '#picker-panel');
       ui.notes.setAttribute('aria-expanded', String(panelMode === 'notes'));
@@ -87,7 +89,7 @@
     items.forEach((item, index) => {
       const number = String(index + 1);
       item.pin.textContent = number;
-      item.pin.setAttribute('aria-label', 'Открыть заметку ' + number + ': ' + item.description.title);
+      item.pin.setAttribute('aria-label', t('open_note_for', number, item.description.title));
     });
   }
 
@@ -113,7 +115,7 @@
     const heading = element('h2', '', title);
     heading.id = 'picker-panel-title';
     heading.tabIndex = -1;
-    const close = button('×', () => closePanel(returnFocus), 'icon', 'Закрыть панель');
+    const close = button('×', () => closePanel(returnFocus), 'icon', t('close_panel'));
     header.append(heading, close);
     ui.panel.setAttribute('aria-labelledby', heading.id);
     ui.panel.append(header);
@@ -133,7 +135,7 @@
   }
 
   function showNotes() {
-    const heading = openPanel('notes', 'Заметки', ui.notes);
+    const heading = openPanel('notes', t('notes'), ui.notes);
     const list = element('ol', 'notes');
     items.forEach((item, index) => {
       const row = element('li');
@@ -141,32 +143,32 @@
         if (item.target?.isConnected) item.target.scrollIntoView({ block: 'nearest', inline: 'nearest' });
         else if (item.area) window.scrollTo(item.area.x - 16, item.area.y - 100);
         showEditor(item);
-      }, 'note-row', 'Заметка ' + (index + 1) + ': ' + item.description.title);
+      }, 'note-row', t('note_for', index + 1, item.description.title));
       entry.append(element('span', 'note-number', String(index + 1)), element('span', '', item.description.title));
       if (item.comment.trim()) entry.append(element('span', 'note-preview', item.comment.trim().slice(0, 100)));
-      const remove = button('Удалить', () => {
+      const remove = button(t('delete'), () => {
         detachMark(item);
         items.splice(items.indexOf(item), 1);
         if (items.length) showNotes();
         else closePanel();
-        notify('Заметка удалена');
-      }, 'danger remove-note', 'Удалить заметку ' + (index + 1));
+        notify(t('note_deleted'));
+      }, 'danger remove-note', t('delete_note', index + 1));
       row.append(entry, remove);
       list.append(row);
     });
     const actions = element('div', 'actions');
-    actions.append(button('Очистить всё', confirmClear, 'danger'));
+    actions.append(button(t('clear_all'), confirmClear, 'danger'));
     ui.panel.append(list, actions);
     heading.focus();
   }
 
   function confirmClear() {
-    const heading = openPanel('clear', 'Удалить все заметки?', ui.notes);
+    const heading = openPanel('clear', t('confirm_delete_notes'), ui.notes);
     const actions = element('div', 'actions');
-    actions.append(button('Отмена', showNotes), button('Удалить все', () => {
+    actions.append(button(t('cancel'), showNotes), button(t('delete_all'), () => {
       for (const item of items.splice(0)) detachMark(item);
       closePanel(null);
-      notify('Заметки удалены');
+      notify(t('notes_deleted'));
     }, 'danger'));
     ui.panel.append(actions);
     heading.focus();
@@ -176,13 +178,13 @@
     preparePanel('editor');
     const index = items.indexOf(item);
     const number = index < 0 ? items.length + 1 : index + 1;
-    ui.panel.setAttribute('aria-label', 'Заметка ' + number + ': ' + item.description.title);
+    ui.panel.setAttribute('aria-label', t('note_for', number, item.description.title));
 
     const comment = element('textarea');
-    comment.setAttribute('aria-label', 'Что исправить');
+    comment.setAttribute('aria-label', t('note_text_label'));
     comment.rows = 1;
     comment.value = item.comment;
-    comment.placeholder = 'Заметка…';
+    comment.placeholder = t('note_placeholder');
     function save() {
       item.comment = comment.value.trim();
       if (!items.includes(item)) {
@@ -215,19 +217,19 @@
     syncButtons();
     try {
       await copyText(text, currentUI);
-      if (ui === currentUI) notify('Скопировано');
+      if (ui === currentUI) notify(t('copied'));
     } catch {
       if (ui !== currentUI) return;
-      openPanel('manual-copy', 'Скопируйте текст вручную', ui.copy);
+      openPanel('manual-copy', t('manual_copy'), ui.copy);
       const output = element('textarea', 'clipboard-text');
       output.readOnly = true;
       output.rows = 7;
-      output.setAttribute('aria-label', 'Текст заметок');
+      output.setAttribute('aria-label', t('note_text'));
       output.value = text;
       ui.panel.append(output);
       output.focus();
       output.select();
-      notify('Не скопировано', false);
+      notify(t('copy_failed'), false);
     } finally {
       if (ui === currentUI) {
         currentUI.copying = false;
@@ -522,7 +524,7 @@
   });
   chrome.storage.local.get('pickerSettings').then(stored => {
     if (!settingsChanged) shortcutSettings = PickerShortcuts.normalize(stored.pickerSettings);
-  }).catch(error => console.warn('Не удалось загрузить сочетание клавиш:', error));
+  }).catch(error => console.warn(t('shortcut_load_failed'), error));
 
   window.addEventListener('blur', shortcutHandler.reset);
   document.addEventListener('visibilitychange', shortcutHandler.reset);

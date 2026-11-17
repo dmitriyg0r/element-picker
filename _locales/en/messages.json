@@ -1,0 +1,238 @@
+{
+  "extension_name": {
+    "message": "Element Picker"
+  },
+  "extension_description": {
+    "message": "Annotate web pages and copy UI feedback with CSS selectors or area coordinates. Works locally."
+  },
+  "ui_language": {
+    "message": "en"
+  },
+  "settings_title": {
+    "message": "Element Picker — Settings"
+  },
+  "start_picking": {
+    "message": "Start picking"
+  },
+  "shortcut_settings": {
+    "message": "Keyboard shortcut settings"
+  },
+  "keyboard_shortcut": {
+    "message": "Keyboard shortcut"
+  },
+  "loading": {
+    "message": "Loading…"
+  },
+  "edit": {
+    "message": "Edit"
+  },
+  "disable": {
+    "message": "Disable"
+  },
+  "command_gesture": {
+    "message": "Tap ⌘ twice or press both ⌘ keys"
+  },
+  "restore_default": {
+    "message": "Reset to default"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "tab_unavailable": {
+    "message": "Open an HTTP or HTTPS page. If you recently updated the extension, reload the page."
+  },
+  "recording_cancelled": {
+    "message": "Shortcut recording canceled."
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "recording_prompt": {
+    "message": "Press a shortcut…"
+  },
+  "recording_help": {
+    "message": "Press the keys. Press Esc to cancel."
+  },
+  "invalid_shortcut": {
+    "message": "Use Ctrl, Alt / Option, or Cmd / Win plus one more key."
+  },
+  "save_prompt": {
+    "message": "Click Save to apply the change."
+  },
+  "saved": {
+    "message": "Saved"
+  },
+  "save_failed": {
+    "message": "Could not save settings: $ERROR$",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "settings_load_failed": {
+    "message": "Could not load settings: $ERROR$. Reload the page.",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "shortcut_unassigned": {
+    "message": "Not assigned"
+  },
+  "space_key": {
+    "message": "Space"
+  },
+  "selection_active": {
+    "message": "Active"
+  },
+  "exit_selection": {
+    "message": "Press Esc to exit selection mode"
+  },
+  "copy": {
+    "message": "Copy"
+  },
+  "notes": {
+    "message": "Notes"
+  },
+  "notes_count": {
+    "message": "Notes · $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "open_note_for": {
+    "message": "Open note $NUMBER$: $TITLE$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      },
+      "title": {
+        "content": "$2"
+      }
+    }
+  },
+  "close_panel": {
+    "message": "Close panel"
+  },
+  "note_for": {
+    "message": "Note $NUMBER$: $TITLE$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      },
+      "title": {
+        "content": "$2"
+      }
+    }
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "note_deleted": {
+    "message": "Note deleted"
+  },
+  "delete_note": {
+    "message": "Delete note $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "clear_all": {
+    "message": "Clear all"
+  },
+  "confirm_delete_notes": {
+    "message": "Delete all notes?"
+  },
+  "delete_all": {
+    "message": "Delete all"
+  },
+  "notes_deleted": {
+    "message": "Notes deleted"
+  },
+  "note_text_label": {
+    "message": "What should change?"
+  },
+  "note_placeholder": {
+    "message": "Add a note…"
+  },
+  "copied": {
+    "message": "Copied"
+  },
+  "manual_copy": {
+    "message": "Copy the text manually"
+  },
+  "note_text": {
+    "message": "Note text"
+  },
+  "copy_failed": {
+    "message": "Copy failed"
+  },
+  "shortcut_load_failed": {
+    "message": "Could not load the keyboard shortcut:"
+  },
+  "page_area": {
+    "message": "Page area"
+  },
+  "report_page": {
+    "message": "Page: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "report_change": {
+    "message": "What to change: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "report_section": {
+    "message": "Section: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "report_selector": {
+    "message": "Selector: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "report_tag": {
+    "message": "Tag: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "report_area": {
+    "message": "Area: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "report_attributes": {
+    "message": "Attributes: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  }
+}

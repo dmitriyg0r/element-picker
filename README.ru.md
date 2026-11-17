@@ -6,6 +6,7 @@
 
 <p align="center">
   <strong><a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Скачать для Chrome</a></strong>
+  · <a href="https://dmitriyg0r.github.io/element-picker/demo/">Попробовать онлайн</a>
   · <a href="#демонстрация">Демо</a> · <a href="#установка">Установка</a>
   <br>
   <a href="README.md">English</a> · <strong>Русский</strong>
@@ -41,7 +42,7 @@
 
 </details>
 
-Интерфейс и подписи в скопированном тексте на русском. Заметки можно писать на любом языке.
+Интерфейс и подписи в скопированном тексте переключаются между английским и русским по языку Chrome. Заметки можно писать на любом языке.
 
 ## Установка
 

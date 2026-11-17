@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Element Picker — настройки</title>
+  <title data-message="settings_title">Element Picker</title>
   <link rel="stylesheet" href="options.css">
+  <script src="i18n.js" defer></script>
   <script src="shortcuts.js" defer></script>
   <script src="options.js" defer></script>
 </head>
@@ -12,24 +13,24 @@
   <main>
     <header>
       <img src="icons/48.png" alt="" width="36" height="36">
-      <h1 lang="en">Element Picker</h1>
+      <h1 lang="en" data-message="extension_name">Element Picker</h1>
     </header>
-    <button id="toggle" class="primary" type="button">Выбрать на странице</button>
-    <section aria-label="Настройки сочетания клавиш">
-      <label for="shortcut">Горячие клавиши</label>
-      <input id="shortcut" type="text" readonly value="Загрузка…">
+    <button id="toggle" class="primary" type="button" data-message="start_picking"></button>
+    <section data-aria-message="shortcut_settings">
+      <label for="shortcut" data-message="keyboard_shortcut"></label>
+      <input id="shortcut" type="text" readonly data-value-message="loading">
       <div class="buttons">
-        <button id="record" type="button" disabled>Изменить</button>
-        <button id="clear" class="quiet" type="button" disabled>Отключить</button>
+        <button id="record" type="button" disabled data-message="edit"></button>
+        <button id="clear" class="quiet" type="button" disabled data-message="disable"></button>
       </div>
       <label id="command-option" class="command-option" hidden>
         <input id="dual-command" type="checkbox" disabled>
-        Два нажатия ⌘ или обе клавиши ⌘
+        <span data-message="command_gesture"></span>
       </label>
     </section>
     <div class="buttons footer">
-      <button id="reset" class="quiet" type="button" disabled>По умолчанию</button>
-      <button id="save" type="button" disabled>Сохранить</button>
+      <button id="reset" class="quiet" type="button" disabled data-message="restore_default"></button>
+      <button id="save" type="button" disabled data-message="save"></button>
     </div>
     <p id="status" role="status"></p>
   </main>

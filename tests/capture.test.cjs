@@ -1,18 +1,26 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
-const { runInNewContext } = require('node:vm');
+const vm = require('node:vm');
+const path = require('node:path');
+const { makeI18n } = require('./i18n-mock.cjs');
 
-const context = {
-  URL, URLSearchParams,
-  location: { href: 'https://example.test/ticket?id=42&token=private-url-token' },
-  document: { body: { querySelector: () => null } },
-  CSS: { escape: value => value }
-};
-runInNewContext(fs.readFileSync(new URL('../capture.js', require('node:url').pathToFileURL(__filename)), 'utf8'), context);
-const { describe, report } = context.PickerCapture;
+function load(locale) {
+  const context = vm.createContext({
+    URL, URLSearchParams,
+    chrome: { i18n: makeI18n(locale) },
+    location: { href: 'https://example.test/ticket?id=42&token=private-url-token' },
+    document: { body: { querySelector: () => null } },
+    CSS: { escape: value => value }
+  });
+  for (const file of ['i18n.js', 'capture.js']) {
+    vm.runInContext(fs.readFileSync(path.join(__dirname, '..', file), 'utf8'), context);
+  }
+  return context.PickerCapture;
+}
 
 test('reports context but excludes password values, unrelated attributes and query parameters', () => {
+  const { describe, report } = load();
   const attributes = { type: 'password', 'aria-label': 'Пароль', 'data-token': 'private-data-token' };
   const input = {
     localName: 'input',
@@ -27,18 +35,28 @@ test('reports context but excludes password values, unrelated attributes and que
 
   const text = report([{ description: describe(input), comment: 'Сменить подпись' }]);
 
-  assert.match(text, /Страница: \/ticket\?id=42/);
+  assert.match(text, /Page: \/ticket\?id=42/);
   assert.match(text, /1\. Пароль/);
-  assert.match(text, /Селектор: input/);
-  assert.match(text, /Что исправить: Сменить подпись/);
+  assert.match(text, /Selector: input/);
+  assert.match(text, /What to change: Сменить подпись/);
   assert.doesNotMatch(text, /private-.*-token/);
 });
 
-test('area notes export the selected dimensions and comment', () => {
-  const description = context.PickerCapture.describeArea({ x: 30, y: 120, width: 150, height: 70 });
+test('Russian area notes export the selected dimensions and comment', () => {
+  const { describeArea, report } = load('ru');
+  const description = describeArea({ x: 30, y: 120, width: 150, height: 70 });
   const text = report([{ description, comment: 'Проверить отступы' }]);
   assert.match(text, /1\. Область страницы/);
   assert.match(text, /Область: 30, 120 · 150 × 70 px/);
   assert.match(text, /Что исправить: Проверить отступы/);
   assert.doesNotMatch(text, /undefined/);
+});
+
+test('English area reports preserve multiline comments and literal placeholder text', () => {
+  const { describeArea, report } = load();
+  const description = describeArea({ x: 12, y: 8, width: 34, height: 56 });
+  const text = report([{ description, comment: 'Recheck $VALUE$\nKeep the caption' }]);
+  assert.match(text, /1\. Page area/);
+  assert.match(text, /Area: 12, 8 · 34 × 56 px/);
+  assert.ok(text.includes('What to change: Recheck $VALUE$\n   Keep the caption'));
 });

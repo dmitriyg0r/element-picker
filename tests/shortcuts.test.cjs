@@ -4,11 +4,14 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
 
-function load(platform) {
-  const context = { globalThis: { navigator: { platform } } };
-  const file = path.join(__dirname, '../shortcuts.js');
-  if (fs.existsSync(file)) vm.runInNewContext(fs.readFileSync(file, 'utf8'), context);
-  return context.globalThis.PickerShortcuts;
+const { makeI18n } = require('./i18n-mock.cjs');
+
+function load(platform, locale) {
+  const context = vm.createContext({ navigator: { platform }, chrome: { i18n: makeI18n(locale) } });
+  for (const file of ['i18n.js', 'shortcuts.js']) {
+    vm.runInContext(fs.readFileSync(path.join(__dirname, '..', file), 'utf8'), context);
+  }
+  return context.PickerShortcuts;
 }
 function event(overrides = {}) {
   return { code: 'KeyI', altKey: true, shiftKey: true, ctrlKey: false,
@@ -90,4 +93,14 @@ test('unsafe plain keys and malformed settings fall back safely; layout uses phy
   assert.equal(api.fromEvent(event({ code: 'KeyP', key: 'З', ctrlKey: true })).code, 'KeyP');
   assert.equal(api.normalize({ shortcut: { code: 'KeyP' } }).shortcut.code, 'KeyI');
   assert.equal(api.normalize({ shortcut: null }).shortcut, null);
+});
+
+test('keyboard labels use the browser locale', () => {
+  const english = load('Win32');
+  const russian = load('Win32', 'ru');
+  const shortcut = english.fromEvent(event({ code: 'Space', altKey: false, shiftKey: false, ctrlKey: true }));
+  assert.equal(english.label(null), 'Not assigned');
+  assert.equal(english.label(shortcut), 'Ctrl + Space');
+  assert.equal(russian.label(null), 'Не назначено');
+  assert.equal(russian.label(shortcut), 'Ctrl + Пробел');
 });

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Try Element Picker on a sample page. Annotate an element and copy the note with its CSS selector.">
+  <title>Try Element Picker</title>
+  <link rel="icon" href="../icons/48.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: light-dark(#f6efe7, #201b18);
+      --surface: light-dark(#fffdfa, #2c2420);
+      --text: light-dark(#2c1e17, #fff3e8);
+      --muted: light-dark(#69584b, #d4c0af);
+      --line: light-dark(#e6d8cb, #4d3d32);
+      --accent: light-dark(#a74418, #ffb385);
+      --on-accent: light-dark(#fff, #3a1c0c);
+      font: 16px/1.5 system-ui, sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 740px; margin: 0 auto; padding: 54px 24px 100px; }
+    header { display: flex; align-items: center; gap: 12px; }
+    header img { width: 39px; height: 39px; }
+    .brand { font-weight: 700; }
+    .hero { padding-block: 36px 28px; }
+    h1, h2, p { margin: 0; }
+    h1 { font-size: clamp(32px, 6vw, 54px); line-height: 1.05; letter-spacing: -.045em; }
+    h2 { font-size: 23px; letter-spacing: -.025em; }
+    p { color: var(--muted); }
+    .hero p { margin-top: 12px; max-width: 42em; }
+    .controls { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 19px; }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    button { font: 650 14px/1.35 system-ui, sans-serif; border-radius: 8px; padding: 9px 12px; cursor: pointer; }
+    button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    button:disabled { opacity: .6; cursor: default; }
+    .start { color: var(--on-accent); background: var(--accent); border: 1px solid transparent; }
+    .card { border: 1px solid var(--line); background: var(--surface); border-radius: 15px; padding: 20px; }
+    .sample-button { margin-top: 13px; border: 1px solid var(--line); background: var(--background); color: var(--text); }
+    .request { font-size: 13px; margin-bottom: 4px; }
+    .hero .footnote { margin-top: 12px; font-size: 13px; }
+    kbd { font: inherit; color: var(--text); font-weight: 650; }
+  </style>
+  <script type="module" src="./boot.js"></script>
+</head>
+<body>
+  <main>
+    <header><img src="../icons/48.png" alt=""><span class="brand">Element Picker</span></header>
+    <section class="hero" aria-labelledby="demo-title">
+      <h1 id="demo-title">Try the picker</h1>
+      <p>Start picking, click <strong>Open request</strong>, and write a note. Press <kbd>Enter</kbd>, then click <strong>Copy</strong> in the toolbar. Press <kbd>Esc</kbd> to leave picking mode.</p>
+      <div class="controls">
+        <button id="start-demo" class="start" type="button" disabled>Start picking</button>
+        <a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Download for Chrome</a>
+        <a href="https://github.com/dmitriyg0r/element-picker">GitHub</a>
+      </div>
+      <p class="footnote">This demo runs on the sample page. Install the extension to annotate other pages.</p>
+      <p id="demo-error" role="status" hidden>The demo could not load. Try refreshing the page.</p>
+    </section>
+    <section class="card" aria-labelledby="sample-heading">
+      <p class="request">Request #24</p>
+      <h2 id="sample-heading">Shared folder access</h2>
+      <p>Waiting for approval</p>
+      <button id="open-request" class="sample-button" type="button">Open request</button>
+    </section>
+  </main>
+</body>
+</html>

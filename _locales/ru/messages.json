@@ -1,0 +1,238 @@
+{
+  "extension_name": {
+    "message": "Element Picker"
+  },
+  "extension_description": {
+    "message": "Добавляйте заметки к элементам и областям страницы. Копируйте замечания с CSS-селекторами или координатами."
+  },
+  "ui_language": {
+    "message": "ru"
+  },
+  "settings_title": {
+    "message": "Element Picker — настройки"
+  },
+  "start_picking": {
+    "message": "Выбрать на странице"
+  },
+  "shortcut_settings": {
+    "message": "Настройки сочетания клавиш"
+  },
+  "keyboard_shortcut": {
+    "message": "Горячие клавиши"
+  },
+  "loading": {
+    "message": "Загрузка…"
+  },
+  "edit": {
+    "message": "Изменить"
+  },
+  "disable": {
+    "message": "Отключить"
+  },
+  "command_gesture": {
+    "message": "Два нажатия ⌘ или обе клавиши ⌘"
+  },
+  "restore_default": {
+    "message": "По умолчанию"
+  },
+  "save": {
+    "message": "Сохранить"
+  },
+  "tab_unavailable": {
+    "message": "Откройте сайт HTTP/HTTPS. Обновите страницу после обновления расширения."
+  },
+  "recording_cancelled": {
+    "message": "Запись отменена."
+  },
+  "cancel": {
+    "message": "Отмена"
+  },
+  "recording_prompt": {
+    "message": "Нажмите сочетание…"
+  },
+  "recording_help": {
+    "message": "Нажмите клавиши. Esc — отмена."
+  },
+  "invalid_shortcut": {
+    "message": "Нужны Ctrl, Alt / Option или Cmd / Win и ещё одна клавиша."
+  },
+  "save_prompt": {
+    "message": "Нажмите «Сохранить»."
+  },
+  "saved": {
+    "message": "Сохранено"
+  },
+  "save_failed": {
+    "message": "Не удалось сохранить настройки: $ERROR$",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "settings_load_failed": {
+    "message": "Не удалось загрузить настройки: $ERROR$. Обновите страницу.",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "shortcut_unassigned": {
+    "message": "Не назначено"
+  },
+  "space_key": {
+    "message": "Пробел"
+  },
+  "selection_active": {
+    "message": "Активно"
+  },
+  "exit_selection": {
+    "message": "Нажмите Esc, чтобы завершить выбор"
+  },
+  "copy": {
+    "message": "Копировать"
+  },
+  "notes": {
+    "message": "Заметки"
+  },
+  "notes_count": {
+    "message": "Заметки · $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "open_note_for": {
+    "message": "Открыть заметку $NUMBER$: $TITLE$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      },
+      "title": {
+        "content": "$2"
+      }
+    }
+  },
+  "close_panel": {
+    "message": "Закрыть панель"
+  },
+  "note_for": {
+    "message": "Заметка $NUMBER$: $TITLE$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      },
+      "title": {
+        "content": "$2"
+      }
+    }
+  },
+  "delete": {
+    "message": "Удалить"
+  },
+  "note_deleted": {
+    "message": "Заметка удалена"
+  },
+  "delete_note": {
+    "message": "Удалить заметку $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "clear_all": {
+    "message": "Очистить всё"
+  },
+  "confirm_delete_notes": {
+    "message": "Удалить все заметки?"
+  },
+  "delete_all": {
+    "message": "Удалить все"
+  },
+  "notes_deleted": {
+    "message": "Заметки удалены"
+  },
+  "note_text_label": {
+    "message": "Что исправить"
+  },
+  "note_placeholder": {
+    "message": "Заметка…"
+  },
+  "copied": {
+    "message": "Скопировано"
+  },
+  "manual_copy": {
+    "message": "Скопируйте текст вручную"
+  },
+  "note_text": {
+    "message": "Текст заметок"
+  },
+  "copy_failed": {
+    "message": "Не скопировано"
+  },
+  "shortcut_load_failed": {
+    "message": "Не удалось загрузить сочетание клавиш:"
+  },
+  "page_area": {
+    "message": "Область страницы"
+  },
+  "report_page": {
+    "message": "Страница: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "report_change": {
+    "message": "Что исправить: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "report_section": {
+    "message": "Блок: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "report_selector": {
+    "message": "Селектор: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "report_tag": {
+    "message": "Тег: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "report_area": {
+    "message": "Область: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "report_attributes": {
+    "message": "Атрибуты: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  }
+}

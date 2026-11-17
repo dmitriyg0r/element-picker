@@ -2,6 +2,8 @@
 (function () {
   'use strict';
 
+  const t = PickerI18n.message;
+
   function compact(value, limit) {
     return (value || '').trim().replace(/\s+/g, ' ').slice(0, limit);
   }
@@ -72,7 +74,7 @@
   }
 
   function describeArea({ x, y, width, height }) {
-    return { title: 'Область страницы', area: x + ', ' + y + ' · ' + width + ' × ' + height + ' px', page: pagePath() };
+    return { title: t('page_area'), area: x + ', ' + y + ' · ' + width + ' × ' + height + ' px', page: pagePath() };
   }
 
   function report(items) {
@@ -80,15 +82,15 @@
     if (!page) return '';
     const blocks = items.map(({ description: d, comment }, index) => [
       (index + 1) + '. ' + d.title,
-      d.page !== page && '   Страница: ' + d.page,
-      comment.trim() && '   Что исправить: ' + comment.trim().replace(/\r?\n/g, '\n   '),
-      d.block && '   Блок: ' + d.block,
-      d.selector && '   Селектор: ' + d.selector,
-      d.tag && '   Тег: ' + d.tag,
-      d.area && '   Область: ' + d.area,
-      d.attributes && '   Атрибуты: ' + d.attributes
+      d.page !== page && '   ' + t('report_page', d.page),
+      comment.trim() && '   ' + t('report_change', comment.trim().replace(/\r?\n/g, '\n   ')),
+      d.block && '   ' + t('report_section', d.block),
+      d.selector && '   ' + t('report_selector', d.selector),
+      d.tag && '   ' + t('report_tag', d.tag),
+      d.area && '   ' + t('report_area', d.area),
+      d.attributes && '   ' + t('report_attributes', d.attributes)
     ].filter(Boolean).join('\n'));
-    return ['Страница: ' + page, ...blocks].join('\n\n');
+    return [t('report_page', page), ...blocks].join('\n\n');
   }
 
   globalThis.PickerCapture = { describe, describeArea, report };

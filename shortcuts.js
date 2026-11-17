@@ -29,13 +29,14 @@
     return valid(shortcut) && !e.isComposing && !e.repeat ? shortcut : null;
   }
   function label(shortcut) {
-    if (!shortcut) return 'Не назначено';
+    const t = PickerI18n.message;
+    if (!shortcut) return t('shortcut_unassigned');
     var parts = [];
     if (shortcut.ctrlKey) parts.push('Ctrl');
     if (shortcut.altKey) parts.push('Alt / Option');
     if (shortcut.shiftKey) parts.push('Shift');
     if (shortcut.metaKey) parts.push('Cmd / Win');
-    var names = { Space: 'Пробел', ArrowUp: '↑', ArrowDown: '↓', ArrowLeft: '←', ArrowRight: '→',
+    var names = { Space: t('space_key'), ArrowUp: '↑', ArrowDown: '↓', ArrowLeft: '←', ArrowRight: '→',
       Backquote: '`', Minus: '-', Equal: '=', BracketLeft: '[', BracketRight: ']', Backslash: '\\',
       Semicolon: ';', Quote: "'", Comma: ',', Period: '.', Slash: '/' };
     parts.push(names[shortcut.code] || shortcut.code.replace(/^(Key|Digit)/, ''));

@@ -13,7 +13,7 @@
 
 ## Watch the demo
 
-![Element Picker demo showing an element selected, a note saved with Enter, and the notes copied from the toolbar](docs/demo.gif)
+![Element Picker demo showing an element selected, a note saved with Enter, and the notes copied from the toolbar](docs/demo.webp)
 
 ## Quick start
 

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Выбор элемента — настройки</title>
+  <link rel="stylesheet" href="options.css">
+  <script src="shortcuts.js" defer></script>
+  <script src="options.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="icons/48.png" alt="" width="36" height="36">
+      <h1>Выбор элемента</h1>
+    </header>
+    <button id="toggle" class="primary" type="button">Выбрать на странице</button>
+    <section aria-label="Настройки сочетания клавиш">
+      <label for="shortcut">Горячие клавиши</label>
+      <input id="shortcut" type="text" readonly value="Загрузка…">
+      <div class="buttons">
+        <button id="record" type="button" disabled>Изменить</button>
+        <button id="clear" class="quiet" type="button" disabled>Отключить</button>
+      </div>
+      <label id="command-option" class="command-option" hidden>
+        <input id="dual-command" type="checkbox" disabled>
+        Два нажатия ⌘ или обе клавиши ⌘
+      </label>
+    </section>
+    <div class="buttons footer">
+      <button id="reset" class="quiet" type="button" disabled>По умолчанию</button>
+      <button id="save" type="button" disabled>Сохранить</button>
+    </div>
+    <p id="status" role="status"></p>
+  </main>
+</body>
+</html>

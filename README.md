@@ -5,8 +5,8 @@
 <p align="center"><strong>Annotate web pages in Chrome and send precise UI feedback to your AI coding assistant.</strong></p>
 
 <p align="center">
-  <strong><a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Download for Chrome</a></strong>
-  · <a href="https://dmitriyg0r.github.io/element-picker/demo/">Try online</a>
+  <strong><a href="https://dmitriyg0r.github.io/element-picker/demo/">Try without installing</a></strong>
+  · <a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Download for Chrome</a>
   · <a href="#watch-the-demo">Demo</a> · <a href="#install">Installation</a>
   <br>
   <strong>English</strong> · <a href="README.ru.md">Русский</a>

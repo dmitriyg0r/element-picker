@@ -5,8 +5,8 @@
 <p align="center"><strong>Оставляйте заметки прямо на странице и передавайте ИИ-ассистенту точные правки по интерфейсу.</strong></p>
 
 <p align="center">
-  <strong><a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Скачать для Chrome</a></strong>
-  · <a href="https://dmitriyg0r.github.io/element-picker/demo/">Попробовать онлайн</a>
+  <strong><a href="https://dmitriyg0r.github.io/element-picker/demo/">Попробовать без установки</a></strong>
+  · <a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Скачать для Chrome</a>
   · <a href="#демонстрация">Демо</a> · <a href="#установка">Установка</a>
   <br>
   <a href="README.md">English</a> · <strong>Русский</strong>

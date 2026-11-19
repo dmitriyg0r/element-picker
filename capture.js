@@ -81,16 +81,16 @@
     const page = items[0]?.description.page;
     if (!page) return '';
     const blocks = items.map(({ description: d, comment }, index) => [
-      (index + 1) + '. ' + d.title,
-      d.page !== page && '   ' + t('report_page', d.page),
-      comment.trim() && '   ' + t('report_change', comment.trim().replace(/\r?\n/g, '\n   ')),
-      d.block && '   ' + t('report_section', d.block),
-      d.selector && '   ' + t('report_selector', d.selector),
-      d.tag && '   ' + t('report_tag', d.tag),
-      d.area && '   ' + t('report_area', d.area),
-      d.attributes && '   ' + t('report_attributes', d.attributes)
+      `${index + 1}. ${d.area ? 'Page area' : d.title}`,
+      d.page !== page && `   Page: ${d.page}`,
+      comment.trim() && `   What to change: ${comment.trim().replace(/\r?\n/g, '\n   ')}`,
+      d.block && `   Section: ${d.block}`,
+      d.selector && `   Selector: ${d.selector}`,
+      d.tag && `   Tag: ${d.tag}`,
+      d.area && `   Area: ${d.area}`,
+      d.attributes && `   Attributes: ${d.attributes}`
     ].filter(Boolean).join('\n'));
-    return [t('report_page', page), ...blocks].join('\n\n');
+    return [`Page: ${page}`, ...blocks].join('\n\n');
   }
 
   globalThis.PickerCapture = { describe, describeArea, report };

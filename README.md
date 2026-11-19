@@ -42,7 +42,7 @@ Page: /requests
 
 </details>
 
-The extension uses English or Russian based on your Chrome language. You can write notes in any language.
+The interface uses English or Russian based on your Chrome language. Copied notes always use English labels. Your notes and text captured from the page keep their original language.
 
 ## Install
 

@@ -19,8 +19,8 @@ function load(locale) {
   return context.PickerCapture;
 }
 
-test('reports context but excludes password values, unrelated attributes and query parameters', () => {
-  const { describe, report } = load();
+test('element reports use English labels in Russian Chrome and exclude sensitive fields', () => {
+  const { describe, report } = load('ru');
   const attributes = { type: 'password', 'aria-label': 'Пароль', 'data-token': 'private-data-token' };
   const input = {
     localName: 'input',
@@ -39,16 +39,19 @@ test('reports context but excludes password values, unrelated attributes and que
   assert.match(text, /1\. Пароль/);
   assert.match(text, /Selector: input/);
   assert.match(text, /What to change: Сменить подпись/);
+  assert.match(text, /Tag: input/);
+  assert.match(text, /Attributes: type="password"/);
   assert.doesNotMatch(text, /private-.*-token/);
 });
 
-test('Russian area notes export the selected dimensions and comment', () => {
+test('Russian Chrome keeps the area label localized in the UI and exports it in English', () => {
   const { describeArea, report } = load('ru');
   const description = describeArea({ x: 30, y: 120, width: 150, height: 70 });
   const text = report([{ description, comment: 'Проверить отступы' }]);
-  assert.match(text, /1\. Область страницы/);
-  assert.match(text, /Область: 30, 120 · 150 × 70 px/);
-  assert.match(text, /Что исправить: Проверить отступы/);
+  assert.equal(description.title, 'Область страницы');
+  assert.match(text, /1\. Page area/);
+  assert.match(text, /Area: 30, 120 · 150 × 70 px/);
+  assert.match(text, /What to change: Проверить отступы/);
   assert.doesNotMatch(text, /undefined/);
 });
 

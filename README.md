@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong><a href="https://dmitriyg0r.github.io/element-picker/demo/">Try without installing</a></strong>
-  · <a href="https://github.com/dmitriyg0r/element-picker/releases/latest">Download for Chrome</a>
+  · <a href="https://chromewebstore.google.com/detail/element-picker/bpanpgpfeahdpcnepkojffffdhlplbla">Install from Chrome Web Store</a>
   · <a href="#watch-the-demo">Demo</a> · <a href="#install">Installation</a>
   <br>
   <strong>English</strong> · <a href="README.ru.md">Русский</a>
@@ -42,9 +42,13 @@ Page: /requests
 
 </details>
 
-The interface uses English or Russian based on your Chrome language. Copied notes always use English labels. Your notes and text captured from the page keep their original language.
+The interface uses English or Russian based on your Chrome language. Starting with version 1.3.8, copied notes always use English labels. Your notes and text captured from the page keep their original language.
 
 ## Install
+
+[Install from the Chrome Web Store](https://chromewebstore.google.com/detail/element-picker/bpanpgpfeahdpcnepkojffffdhlplbla).
+
+### Install from a ZIP
 
 1. Download the ZIP from the [latest release](https://github.com/dmitriyg0r/element-picker/releases/latest) and extract it. If you cloned the repository, use its root folder.
 2. Open `chrome://extensions` and turn on **Developer mode**.

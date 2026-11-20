@@ -14,9 +14,9 @@
 
 ## Демонстрация
 
-[![Обложка видеодемо Element Picker с подсвеченной рамкой выделения](docs/product-demo-cover.jpg)](https://dmitriyg0r.github.io/element-picker/docs/product-demo.mp4)
+![Демо Element Picker: выбор кнопки, заметка и копирование вместе с CSS-селектором](docs/product-demo.gif)
 
-[▶ Смотреть демо · 27 секунд, английские титры](https://dmitriyg0r.github.io/element-picker/docs/product-demo.mp4)
+[Версия MP4 со звуком](https://dmitriyg0r.github.io/element-picker/docs/product-demo.mp4)
 
 ## Быстрый старт
 

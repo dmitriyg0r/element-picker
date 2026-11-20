@@ -14,9 +14,9 @@
 
 ## Watch the demo
 
-[![Element Picker video cover with the headline Point to what needs fixing](docs/product-demo-cover.jpg)](https://dmitriyg0r.github.io/element-picker/docs/product-demo.mp4)
+![Element Picker demo: select a button, write a note, and copy it with its CSS selector](docs/product-demo.gif)
 
-[▶ Watch the 27-second demo](https://dmitriyg0r.github.io/element-picker/docs/product-demo.mp4)
+[MP4 version with sound](https://dmitriyg0r.github.io/element-picker/docs/product-demo.mp4)
 
 ## Quick start
 

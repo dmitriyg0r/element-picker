@@ -212,12 +212,32 @@
   async function copyNotes() {
     if (!items.length || ui.copying) return;
     const currentUI = ui;
+    const copied = new Map(items.map(item => [item, item.comment]));
+    const editor = panelMode === 'editor' ? ui.panel.querySelector('textarea') : null;
+    const editorValue = editor?.value;
     const text = PickerCapture.report(items);
     currentUI.copying = true;
     syncButtons();
     try {
       await copyText(text, currentUI);
-      if (ui === currentUI) notify(t('copied'));
+      for (let index = items.length - 1; index >= 0; index--) {
+        const item = items[index];
+        if (copied.get(item) !== item.comment) continue;
+        if (ui) detachMark(item);
+        items.splice(index, 1);
+      }
+      if (!ui) return;
+
+      const activeEditor = panelMode === 'editor' ? ui.panel.querySelector('textarea') : null;
+      const editorChanged = activeEditor && (activeEditor !== editor || activeEditor.value !== editorValue);
+      if (ui === currentUI && !items.length && !editorChanged) {
+        stop();
+      } else {
+        if (panelMode === 'notes' && items.length) showNotes();
+        else if (!items.length && (panelMode === 'notes' || panelMode === 'clear')) closePanel(null);
+        else syncButtons();
+        if (ui === currentUI) notify(t('copied'));
+      }
     } catch {
       if (ui !== currentUI) return;
       openPanel('manual-copy', t('manual_copy'), ui.copy);
@@ -247,7 +267,7 @@
         // Для страниц, где Clipboard API недоступен, используем выделение текста.
       }
     }
-    if (ui !== currentUI) return;
+    if (ui !== currentUI) throw new Error('Copy unavailable');
 
     const field = element('textarea', 'clipboard-fallback');
     field.readOnly = true;
@@ -277,6 +297,7 @@
     if (item.target) resizeObserver.unobserve(item.target);
     item.mark.remove();
     item.pin.remove();
+    item.mark = item.pin = null;
   }
 
   function select(event) {
@@ -533,9 +554,7 @@
   document.addEventListener('keydown', event => {
     if (!event.isComposing && ui && event.key === 'Escape') {
       shortcutHandler.reset();
-      if (drag) cancelDrag();
-      else if (panelMode) closePanel(editorItem?.pin);
-      else stop();
+      stop();
     } else if (!shortcutHandler.keydown(event)) {
       return;
     }

@@ -23,7 +23,7 @@
 3. Write your note and press **Enter**. Click its numbered marker to edit it again.
 4. Click **Copy** in the bottom toolbar and paste the notes into your assistant.
 
-The **Notes** counter opens the list, where you can review or delete notes. If clipboard access fails, the extension selects the text for manual copying. Notes stay in the current page until you reload or close it.
+The **Notes** counter opens the list, where you can review or delete notes. After a successful copy, the picker closes and clears the copied notes. If clipboard access fails, the extension keeps the notes and selects the text for manual copying. You can reopen the picker after pressing **Esc** to recover saved notes until you reload or close the page.
 
 The copied notes include the page path and a CSS selector or the coordinates of the selected area. You can paste them into Codex or any other AI coding assistant.
 
@@ -65,7 +65,7 @@ After updating the files, reload the extension at `chrome://extensions` and refr
 | Start or stop picking on a Mac | Quickly tap one `⌘` key twice, or press both `⌘` keys together |
 | Save a note | `Enter` |
 | Add a new line | `Shift + Enter` |
-| Cancel editing or stop picking | `Esc` |
+| Close the picker and keep saved notes | `Esc` |
 
 You can configure the main shortcut and the Mac gesture independently in the extension menu. Shortcuts follow the physical key. Chrome and the operating system may intercept some combinations.
 

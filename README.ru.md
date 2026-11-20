@@ -14,7 +14,9 @@
 
 ## Демонстрация
 
-![Демо: выбор элемента, сохранение заметки по Enter и копирование с нижней панели](docs/demo.webp)
+[![Обложка видеодемо Element Picker с подсвеченной рамкой выделения](docs/product-demo-cover.jpg)](https://dmitriyg0r.github.io/element-picker/docs/product-demo.mp4)
+
+[▶ Смотреть демо · 27 секунд, английские титры](https://dmitriyg0r.github.io/element-picker/docs/product-demo.mp4)
 
 ## Быстрый старт
 

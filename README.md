@@ -14,7 +14,9 @@
 
 ## Watch the demo
 
-![Element Picker demo showing an element selected, a note saved with Enter, and the notes copied from the toolbar](docs/demo.webp)
+[![Element Picker video cover with the headline Point to what needs fixing](docs/product-demo-cover.jpg)](https://dmitriyg0r.github.io/element-picker/docs/product-demo.mp4)
+
+[▶ Watch the 27-second demo](https://dmitriyg0r.github.io/element-picker/docs/product-demo.mp4)
 
 ## Quick start
 

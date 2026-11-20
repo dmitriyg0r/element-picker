@@ -16,7 +16,6 @@
 
 ![Element Picker demo: select a button, write a note, and copy it with its CSS selector](docs/product-demo.gif)
 
-[MP4 version with sound](https://dmitriyg0r.github.io/element-picker/docs/product-demo.mp4)
 
 ## Quick start
 
